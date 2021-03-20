@@ -1,1 +1,2 @@
-webpack5
+To run : npm i & npm start
+
