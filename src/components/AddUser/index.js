@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Input, { useInput } from '../Common/Input';
+import Button from '../Common/Button';
 
 import styles from './index.scss';
 
@@ -131,11 +132,15 @@ function AddNewUser({ handleAddUser }) {
     }
 
     return (
-        <div>
+        <div className={styles.container}>
             {fields.map(field => (
-                <Input {...field} key={field.label} />
+                <Input {...field} key={field.label} className={styles.input} />
             ))}
-            <button onClick={addUser}>Adduser</button>
+            <div className={styles.btnContainer}>
+                <Button onClick={addUser}>
+                    <span className={styles.cta}>Add User</span>
+                </Button>
+            </div>
         </div>
     )
 }

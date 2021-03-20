@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 
-function Input({ onChange, value, placeholder, label, type="text" }) {
+import styles from './index.scss';
+
+function Input({ onChange, value, placeholder, label, type="text", className="" }) {
     return (
-        <label>
-            <span>{label}</span>
-            <input onChange={onChange} value={value} placeholder={placeholder} type={type} />
+        <label className={`${styles.inputContainer} ${className}`}>
+            <span className={styles.label}>{label}</span>
+            <input onChange={onChange} value={value} placeholder={placeholder} type={type} className={styles.input} />
         </label>
     )
 }

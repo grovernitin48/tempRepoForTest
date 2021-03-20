@@ -6,4 +6,11 @@
 
 .usersList {
   overflow: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  > *:nth-child(odd) {
+    margin-right: 20px;
+  }
 }

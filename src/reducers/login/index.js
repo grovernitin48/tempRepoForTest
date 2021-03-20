@@ -6,7 +6,7 @@ const initialState = {
     isAuthenticated: false,
 }
 
-export default (state=initialState, action) => {
+export default (state= initialState, action) => {
     switch (action.type) {
         case LOGIN_ACTIONS_TYPE.SET_PASSWORD:
             return {
@@ -23,6 +23,10 @@ export default (state=initialState, action) => {
                 ...state,
                 isAuthenticated: action.payload,
             };
+        case LOGIN_ACTIONS_TYPE.LOG_OUT_USER:
+            return {
+                ...initialState
+            }
         default:
             return state;
     }

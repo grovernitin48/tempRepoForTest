@@ -1,3 +1,25 @@
 .container {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 50rem;
 
+  > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.input {
+  flex-direction: column;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.cta {
+  font-size: 1.2rem;
 }

@@ -7,8 +7,8 @@
   align-items: center;
 }
 
-.inputLabel {
-
+.btn {
+  font-size: 1.2rem;
 }
 
 .input {
@@ -18,4 +18,12 @@
   color: var(--input-text);
   padding: .5rem;
   border-radius: 10px;
+}
+
+.btnContainer {
+  display: flex;
+
+  > *:not(:last-child) {
+    margin-right: 1rem;
+  }
 }

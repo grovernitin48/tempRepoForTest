@@ -1,0 +1,39 @@
+.container {
+  width: calc(90vw / 2);
+  box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  margin-bottom: 20px;
+  border-radius: 4px;
+  display: flex;
+}
+
+.image {
+  min-height: 128px;
+  min-width: 128px;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10rem;
+  flex: 1 0 0;
+}
+
+.header {
+  margin: 0;
+  text-transform: capitalize;
+  margin-bottom: .2rem;
+}
+
+.userName {
+  color: var(--grey--grey);
+}
+
+.gender {
+  text-transform: capitalize;
+}
+
+.state {
+  text-transform: capitalize;
+  display: block;
+}

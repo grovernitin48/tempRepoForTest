@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 import Header from '../../components/Header';
+import UserCard from '../../components/UserCard';
 
 import styles from './index.scss';
 
-function Home({ fetchUsers, home: { users }, setNewUser, isAuthenticated, history }) {
+function Home({ fetchUsers, home: { users }, setNewUser, isAuthenticated, history, logout }) {
+    console.log({ isAuthenticated })
     useEffect(() => {
         if(!isAuthenticated) {
             history.push('/');
@@ -18,7 +20,7 @@ function Home({ fetchUsers, home: { users }, setNewUser, isAuthenticated, histor
     }, [])
 
     useEffect(() => {
-        if(userSearchQuery && userSearchQuery.length > 2) {
+        if(userSearchQuery && userSearchQuery.length > 0) {
             const filteredRes = users.filter(({ user }) => {
                 const name = `${user.name.first} ${user.name.last}`;
                 return name.toLowerCase().includes(userSearchQuery.toLowerCase())
@@ -33,32 +35,10 @@ function Home({ fetchUsers, home: { users }, setNewUser, isAuthenticated, histor
 
     return (
         <div className={styles.container}>
-            <Header userSearchQuery={userSearchQuery} setUserSearchQuery={setUserSearchQuery} addNewUser={setNewUser} />
+            <Header userSearchQuery={userSearchQuery} setUserSearchQuery={setUserSearchQuery} addNewUser={setNewUser} onLogout={logout} />
             <div className={styles.usersList}>
                 {filteredResult.map(({ user }) => (
-                    <div key={user.registered}>
-                        <img src={user?.picture?.thumbnail}/>
-                        <div >
-                            <div >
-                                {user.username}
-                                <span >
-                                {user.gender === 'female' ? 'Female' : 'Male'}
-                            </span>
-                            </div>
-                            <div>
-                                <h2 style={{textTransform: 'capitalize'}}>{user.name.title} {user.name.first} {user.name.last}</h2>
-                                <p>{user.email}</p>
-                            </div>
-                            <div>
-                        <span>
-                        {user.phone}
-                        </span>
-                                <span style={{textTransform: 'uppercase'}}>
-                        {user?.location?.state}
-                        </span>
-                            </div>
-                        </div>
-                    </div>
+                    <UserCard user={user} />
                 ))}
             </div>
         </div>

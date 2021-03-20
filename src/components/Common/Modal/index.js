@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+import Button from '../Button';
 import styles from './index.scss';
 
 function Modal({ children, isOpen, onClose }) {
@@ -6,9 +8,13 @@ function Modal({ children, isOpen, onClose }) {
         return (
             <div className={styles.container}>
                <div className={styles.btnContainer}>
-                   <button onClick={onClose} className={styles.btn}>close</button>
+                   <Button onClick={onClose}>
+                       <span className={styles.btn}>close</span>
+                   </Button>
                </div>
-                {children}
+                <div className={styles.children}>
+                    {children}
+                </div>
             </div>
         )
     }

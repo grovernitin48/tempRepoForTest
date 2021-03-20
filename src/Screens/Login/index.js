@@ -9,6 +9,10 @@ function Login({ setUserName, setPassword, authenticateUser, login: loginData, h
     const { userName, password, isAuthenticated } = loginData;
 
     useEffect(() => {
+        authenticateUser();
+    }, [])
+
+    useEffect(() => {
         if(isAuthenticated) {
             history.push('/home')
         }

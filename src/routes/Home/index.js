@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { HomeActions } from '../../actions/homeActions';
+import { LoginActions } from '../../actions/loginActions';
 import Home from '../../Screens/Home';
 
 function HomeRoute(props) {
@@ -16,6 +17,7 @@ const mapStateToProps = state => {
 
 export default connect(
     mapStateToProps,
-    HomeActions,
+    {...HomeActions, logout: LoginActions.logoutUser },
+
 )(HomeRoute);
 
