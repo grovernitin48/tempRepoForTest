@@ -1,0 +1,23 @@
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(34, 34, 34, .8);
+  padding: 2rem;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn {
+  font-size: 2rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: var(--white);
+  padding: 10px;
+}

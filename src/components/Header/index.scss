@@ -1,0 +1,21 @@
+.container {
+  background-color: var(--header-background);
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  align-items: center;
+}
+
+.inputLabel {
+
+}
+
+.input {
+  outline: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--input-text);
+  padding: .5rem;
+  border-radius: 10px;
+}
